@@ -112,24 +112,21 @@ h1,
 }
 
 #search {
-     /* position: absolute;
-     top: 0;
-     right: 0; 
-     padding: 1.5em;
-     margin: 0;*/
+     background-image: url(/dist/icon/magnify.png);
+     background-repeat: no-repeat;
+     background-size: 3em;
+     background-position: center;
      width: 5em;
      height: 5em;
      border-radius: 50%;
      border: none;
      outline: none;
-     background: #fa6d1b;
      color: #fff;
      cursor: pointer;
-     /* font-size: 1.2em; */
      transition: 0.4s;
 }
 #search:hover {
-     background: #fff !important;
+     border: 4px solid rgb(250, 133, 0) !important;
      color: #000;
 }
 .search {
@@ -140,9 +137,6 @@ h1,
      width: 70%;
      color: #fff;
      font-size: 2em;
-     /* position: absolute;
-     top: 0;
-     left: 0; */
      height: 2em;
 }
 .search:focus {
