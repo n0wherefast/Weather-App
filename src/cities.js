@@ -16,7 +16,7 @@ cities.forEach((city) => {
 
           try {
                let response = await fetch(
-                    `http://api.weatherapi.com/v1/current.json?key=0ae5eb3df5a04d818fc102533222908&q=${cityInput}`,
+                    `https://api.weatherapi.com/v1/current.json?key=0ae5eb3df5a04d818fc102533222908&q=${cityInput}`,
                     { mode: "cors" }
                );
 

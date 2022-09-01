@@ -1,6 +1,3 @@
-let input = document.querySelector("input");
-const btn = document.getElementById("search");
-const container = document.querySelector(".container");
 const temp = document.querySelector(".temp");
 const cityName = document.querySelector(".name");
 const condition = document.querySelector(".condition");
@@ -20,14 +17,14 @@ navigator.geolocation.getCurrentPosition(async function (position) {
 
      try {
           let response = await fetch(
-               `http://api.openweathermap.org/geo/1.0/reverse?lat=${lati}&lon=${long}&limit=&appid=d7f2302909be07e4e4066c32537729f5`,
+               `https://api.openweathermap.org/geo/1.0/reverse?lat=${lati}&lon=${long}&limit=&appid=d7f2302909be07e4e4066c32537729f5`,
                { mode: "cors" }
           );
           let currentLocation = await response.json();
           let GeoCityName = currentLocation[0].name;
 
           let respo = await fetch(
-               `http://api.weatherapi.com/v1/current.json?key=0ae5eb3df5a04d818fc102533222908&q=${GeoCityName}
+               `https://api.weatherapi.com/v1/current.json?key=0ae5eb3df5a04d818fc102533222908&q=${GeoCityName}
            `,
                { mode: "cors" }
           );

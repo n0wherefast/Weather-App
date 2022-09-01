@@ -3,7 +3,6 @@ import navigator from "./geolocation";
 
 let input = document.querySelector("input");
 const btn = document.getElementById("search");
-const container = document.querySelector(".container");
 const temp = document.querySelector(".temp");
 const cityName = document.querySelector(".name");
 const condition = document.querySelector(".condition");
