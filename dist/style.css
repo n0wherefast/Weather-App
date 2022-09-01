@@ -1,0 +1,351 @@
+body {
+     margin: 0;
+     font-family: "Rubik", sans-serif;
+     background: #111;
+}
+
+* {
+     box-sizing: border-box;
+}
+h1,
+.tit {
+     font-size: 5em;
+     font-weight: 400;
+}
+.weather-app {
+     min-height: 100vh;
+     background-image: url(https://images.pexels.com/photos/681391/pexels-photo-681391.jpeg?cs=srgb&dl=pexels-aleksejs-bergmanis-681391.jpg&fm=jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     color: #fff;
+     position: relative;
+     transition: 500ms;
+     opacity: 1;
+}
+.weather-app::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.3);
+     z-index: 0;
+}
+.container {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: flex-start;
+     flex-direction: column;
+     padding: 2em 3em 4em 3em;
+}
+.container > div {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+.city-time,
+.temp,
+.weather {
+     margin: 0 1em;
+}
+.city-time {
+     margin: 0;
+     margin-bottom: 0.2em;
+     font-size: 3em;
+}
+.temp {
+     font-size: 7em;
+     margin: 0;
+}
+.weather img {
+     display: block;
+     margin: 0.5em 0;
+}
+.meteoCont {
+     background: rgba(110, 110, 110, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.18);
+     z-index: 1;
+     padding: 3em 2em;
+     width: 30%;
+     height: 100%;
+}
+.contOne {
+     width: 128em;
+}
+
+.panel {
+     position: absolute;
+     width: 100%;
+     height: 10%;
+     top: 0;
+     right: 0;
+     z-index: 1;
+     padding: 3em 2em;
+}
+.panel {
+     margin: 1em;
+}
+.margin {
+     margin: 1em;
+}
+.form {
+     height: 5em;
+     background-color: aqua;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 35px;
+     background: rgba(110, 110, 110, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#search {
+     /* position: absolute;
+     top: 0;
+     right: 0; 
+     padding: 1.5em;
+     margin: 0;*/
+     width: 5em;
+     height: 5em;
+     border-radius: 50%;
+     border: none;
+     outline: none;
+     background: #fa6d1b;
+     color: #fff;
+     cursor: pointer;
+     /* font-size: 1.2em; */
+     transition: 0.4s;
+}
+#search:hover {
+     background: #fff !important;
+     color: #000;
+}
+.search {
+     background: none;
+     border: none;
+     border-bottom: 1px #ccc solid;
+     padding: 0 1em 0.5em 0;
+     width: 70%;
+     color: #fff;
+     font-size: 2em;
+     /* position: absolute;
+     top: 0;
+     left: 0; */
+     height: 2em;
+}
+.search:focus {
+     outline: none;
+}
+.search::placeholder {
+     color: #ccc;
+}
+.panel ul {
+     padding: 0 0 1em 0;
+     margin: 2em 0;
+     border-bottom: 1px #ccc solid;
+}
+.panel ul li {
+     font-weight: 900;
+     font-size: 1.3em;
+     color: #ccc;
+     margin: 2.5em 0;
+}
+.panel ul h4 {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 3em 0;
+     font-size: 1.5em;
+}
+.cities {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     background: rgba(110, 110, 110, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.18);
+     font-size: 25px;
+     width: 18%;
+     height: 35%;
+     font-weight: 900;
+     padding: 0.1em;
+     position: relative;
+     top: 103px;
+     right: 745px;
+}
+.details {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     background: rgba(110, 110, 110, 0.25);
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.18);
+     width: 18%;
+     font-size: 25px;
+     font-weight: 900;
+     padding: 1em;
+     position: relative;
+     bottom: 141px;
+     right: 147px;
+}
+.city {
+     display: block;
+     cursor: pointer;
+     margin: 0.2em;
+}
+.city:hover {
+     color: rgb(78, 77, 77);
+}
+.details li {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+@media screen and (max-width: 800px) {
+     .panel,
+     .contOne {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          top: initial;
+     }
+     .cities {
+          display: flex;
+     }
+     .details {
+          position: relative;
+          left: 2em;
+          width: 25em;
+          font-size: small;
+     }
+
+     .meteoCont {
+          position: relative;
+          bottom: 5em;
+          width: 40em;
+          height: 35em;
+          font-size: smaller;
+     }
+
+     .tit {
+          position: relative;
+          bottom: 1.2em;
+          font-size: 3em;
+          font-weight: 400;
+     }
+     .weather img {
+          display: inline;
+          margin: 0;
+     }
+     .weather {
+          margin: 0;
+     }
+     .form {
+          margin: -3em;
+          position: relative;
+          bottom: 7em;
+     }
+     #search {
+          width: 4em;
+          height: 4em;
+     }
+}
+@media screen and (max-width: 500px) {
+     html {
+          font-size: 12px;
+     }
+}
+
+@media screen and (max-height: 300px) {
+     .weather-app {
+          min-height: 40em;
+     }
+     .panel,
+     .container {
+          position: relative;
+          width: 100%;
+          top: initial;
+     }
+}
+
+/*SWITCH BUTTON STYLE*/
+/* The switch - the box around the slider */
+.switch {
+     position: relative;
+     display: inline-block;
+     width: 46px;
+     height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+     opacity: 0;
+     width: 0;
+     height: 0;
+}
+
+/* The slider */
+.slider {
+     position: absolute;
+     cursor: pointer;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #ccc;
+     -webkit-transition: 0.4s;
+     transition: 0.4s;
+}
+
+.slider:before {
+     position: absolute;
+     content: "";
+     height: 13px;
+     width: 13px;
+     left: 4px;
+     bottom: 4px;
+     background-color: white;
+     -webkit-transition: 0.4s;
+     transition: 0.4s;
+}
+
+input:checked + .slider {
+     background-color: #3c4d46;
+}
+
+input:focus + .slider {
+     box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+     -webkit-transform: translateX(26px);
+     -ms-transform: translateX(26px);
+     transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+     border-radius: 34px;
+}
+
+.slider.round:before {
+     border-radius: 50%;
+}
+/*SWITCH BUTTON STILE*/
