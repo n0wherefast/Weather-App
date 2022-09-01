@@ -79,7 +79,7 @@ h1,
      height: 100%;
 }
 .contOne {
-     width: 128em;
+     width: 100em;
 }
 
 .panel {
@@ -186,7 +186,7 @@ h1,
      padding: 0.1em;
      position: relative;
      top: 103px;
-     right: 745px;
+     right: 22em;
 }
 .details {
      display: flex;
@@ -203,7 +203,7 @@ h1,
      padding: 1em;
      position: relative;
      bottom: 141px;
-     right: 147px;
+     right: 3em;
 }
 .city {
      display: block;
